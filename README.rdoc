@@ -1,0 +1,7 @@
+= jquery.snippets
+
+Watch the js/coffee files for usage.
+
+== License
+
+WTFPLv2
