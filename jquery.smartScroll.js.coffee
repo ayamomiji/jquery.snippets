@@ -12,9 +12,7 @@
 #
 # Done.
 
-jQuery.fn.smartScroll = (callback) ->
-  @each ->
-    @scrollDown = @scrollTop == (@scrollHeight - $(@).height())
-  callback()
-  @each ->
-    @scrollTop = @scrollHeight if @scrollDown
+jQuery.fn.smartScroll = (fn) ->
+  needScroll = @scrollTop() + @height() == @prop('scrollHeight')
+  fn()
+  @prop(scrollTop: @prop('scrollHeight')) if needScroll
